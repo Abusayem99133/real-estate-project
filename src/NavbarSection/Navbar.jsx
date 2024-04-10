@@ -1,7 +1,18 @@
 import { Link, NavLink } from "react-router-dom";
 import hujur from "../assets/siam.jpg";
 import logo from "../assets/house.png";
+import UserAuth from "../UserAuth";
 const Navbar = () => {
+  const { user, logOut } = UserAuth();
+  const handleSignOut = () => {
+    logOut()
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
   const navLinks = (
     <>
       <li>
@@ -111,9 +122,15 @@ const Navbar = () => {
         <div className="w-10">
           <img className="rounded-full" alt="user photo" src={hujur} />
         </div>
-        <Link to="/login">
-          <button className="btn">Login</button>
-        </Link>
+        {user ? (
+          <button onClick={handleSignOut} className="btn">
+            SignOut
+          </button>
+        ) : (
+          <Link to="/login">
+            <button className="btn">Login</button>
+          </Link>
+        )}
       </div>
     </div>
   );
