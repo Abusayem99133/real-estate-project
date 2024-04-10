@@ -1,9 +1,10 @@
-import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../Providers/AuthProvider";
+
+import SocialLogin from "./SocialLogin";
+import UserAuth from "../../UserAuth";
 
 const Login = () => {
-  const { signInUser } = useContext(AuthContext);
+  const { signInUser } = UserAuth();
   const handleLogin = (e) => {
     e.preventDefault();
     console.log(e.currentTarget);
@@ -64,6 +65,9 @@ const Login = () => {
                 Register
               </Link>
             </p>
+            <div className="p-2">
+              <SocialLogin></SocialLogin>
+            </div>
           </div>
         </div>
       </div>

@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../Providers/AuthProvider";
-import { useContext } from "react";
+
+import UserAuth from "../../UserAuth";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser } = UserAuth();
   const handleRegister = (e) => {
     e.preventDefault();
     console.log(e.currentTarget);
