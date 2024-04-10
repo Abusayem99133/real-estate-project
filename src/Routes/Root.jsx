@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../NavbarSection/Navbar";
-import Banner from "../HomePage/Banner";
+
 import Footer from "../Components/MainLayout/Footer/Footer";
 
 const Root = () => {
@@ -8,7 +8,6 @@ const Root = () => {
     <div>
       <div>
         <Navbar></Navbar>
-        <Banner></Banner>
       </div>
       <Outlet></Outlet>
       <div className="mt-[0%]">
