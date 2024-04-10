@@ -4,7 +4,7 @@ import "swiper/css";
 import "swiper/css/bundle";
 const Banner = () => {
   return (
-    <div className="">
+    <div className="lg:ml-80">
       <Swiper navigation={true} modules={[Navigation]} loop={true}>
         <SwiperSlide>
           <div

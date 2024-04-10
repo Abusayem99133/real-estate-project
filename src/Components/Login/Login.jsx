@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-// import SocialLogin from "./SocialLogin";
+import SocialLogin from "./SocialLogin";
 import UserAuth from "../../UserAuth";
 
 const Login = () => {
@@ -43,7 +43,7 @@ const Login = () => {
                   required
                 />
               </div>
-              <div className="form-control">
+              <div className="form-control ">
                 <label className="label">
                   <span className="label-text">Password</span>
                 </label>
@@ -51,10 +51,11 @@ const Login = () => {
                   type="password"
                   name="password"
                   placeholder="password"
-                  className="input input-bordered"
+                  className="input input-bordered relative"
                   required
                 />
               </div>
+              <span className="absolute">Show</span>
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Login</button>
               </div>
@@ -65,7 +66,9 @@ const Login = () => {
                 Register
               </Link>
             </p>
-            <div className="p-2">{/* <SocialLogin></SocialLogin> */}</div>
+            <div className="p-2">
+              <SocialLogin></SocialLogin>
+            </div>
           </div>
         </div>
       </div>

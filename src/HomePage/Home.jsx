@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import EstateCard from "./EstateCard";
+import Banner from "./Banner";
 
 const Home = () => {
   const [estateCards, setEstateCards] = useState([]);
@@ -11,12 +12,15 @@ const Home = () => {
   // console.log(estateCards);
   return (
     <div>
-      <h1 className="mt-5 text-3xl font-bold text-center">Our Estates</h1>
-      <p className="text-center mt-2">Our Estates Services awesome...</p>
-      <div className=" mt-6 gap-6 grid md:grid-cols-2 lg:grid-cols-3 ">
-        {estateCards.map((card) => (
-          <EstateCard key={card.id} card={card}></EstateCard>
-        ))}
+      <Banner></Banner>
+      <div>
+        <h1 className="mt-5 text-3xl font-bold text-center">Our Estates</h1>
+        <p className="text-center mt-2">Our Estates Services awesome...</p>
+        <div className=" mt-6 gap-6 grid md:grid-cols-2 lg:grid-cols-3 ">
+          {estateCards.map((card) => (
+            <EstateCard key={card.id} card={card}></EstateCard>
+          ))}
+        </div>
       </div>
     </div>
   );

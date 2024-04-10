@@ -34,7 +34,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className=" navbar   bg-base-300">
+    <div className=" navbar p-8 shadow-xl bg-orange-100">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -60,8 +60,9 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <a className=" font-bold text-lime-600">
-          <img className="w-8" src={logo} alt="" />
+        <a className="flex items-center space-x-3 font-bold text-orange-600">
+          <img className="w-16" src={logo} alt="" />
+          <span className="text-3xl ">Estate</span>
         </a>
       </div>
       <div className="navbar-center  lg:flex">
@@ -71,7 +72,7 @@ const Navbar = () => {
               to="/"
               className={({ isActive }) =>
                 isActive
-                  ? "text-lime-600 border-2 border-lime-500 hover:bg-lime-400 font-bold"
+                  ? "text-orange-600 border-2 border-orange-500 hover:bg-purple-200 font-bold"
                   : "font-bold"
               }
             >
@@ -84,7 +85,7 @@ const Navbar = () => {
               to="/about"
               className={({ isActive }) =>
                 isActive
-                  ? "text-lime-600 border-2 border-lime-500 hover:bg-lime-400 font-bold"
+                  ? "text-orange-600 border-2 border-orange-500 hover:bg-purple-200 font-bold"
                   : "font-bold"
               }
             >
@@ -96,7 +97,7 @@ const Navbar = () => {
               to="/profile"
               className={({ isActive }) =>
                 isActive
-                  ? "text-lime-600 border-2 border-lime-500 hover:bg-lime-400 font-bold"
+                  ? "text-orange-600 border-2 border-orange-500 hover:bg-purple-200 font-bold"
                   : "font-bold"
               }
             >
@@ -109,7 +110,7 @@ const Navbar = () => {
               to="login"
               className={({ isActive }) =>
                 isActive
-                  ? "text-lime-600 border-2 border-lime-500 hover:bg-lime-400 font-bold"
+                  ? "text-orange-600 border-2 border-orange-500 hover:bg-purple-200 font-bold"
                   : "font-bold"
               }
             >
@@ -128,7 +129,7 @@ const Navbar = () => {
           </button>
         ) : (
           <Link to="/login">
-            <button className="btn">Login</button>
+            <button className="btn bg-orange-300">Login</button>
           </Link>
         )}
       </div>
