@@ -11,7 +11,7 @@ const Root = () => {
         <Banner></Banner>
       </div>
       <Outlet></Outlet>
-      <div className="mt-[100%]">
+      <div className="mt-[0%]">
         <Footer></Footer>
       </div>
     </div>

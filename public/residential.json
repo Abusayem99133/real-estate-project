@@ -9,7 +9,7 @@
       "area": "2500 sq ft",
       "location": "123 Main Street, Anytown, USA",
       "facilities": ["living room", "swimming pool", "kitchen"],
-      "image_url": "https://example.com/single_family_home.jpg"
+      "image_url": "https://iili.io/JkP6E7f.jpg"
     },
     {
       "estate_title": "Cozy Townhouse in Urban Neighborhood",
@@ -21,7 +21,7 @@
       "area": "1800 sq ft",
       "location": "456 Elm Street, Cityville, USA",
       "facilities": ["living room", "kitchen", "backyard"],
-      "image_url": "https://example.com/townhouse.jpg"
+      "image_url": "https://iili.io/JkPPajV.jpg"
     },
     {
       "estate_title": "Luxurious Apartment with City Views",
@@ -33,7 +33,7 @@
       "area": "1200 sq ft",
       "location": "789 Oak Avenue, Metro City, USA",
       "facilities": ["living room", "gym", "rooftop terrace"],
-      "image_url": "https://example.com/luxury_apartment.jpg"
+      "image_url": "https://iili.io/JkPPenI.jpg"
     },
     {
       "estate_title": "Student Housing near Campus",
@@ -45,7 +45,7 @@
       "area": "120 sq ft (per room)",
       "location": "101 College Avenue, College Town, USA",
       "facilities": ["bedroom", "study area", "laundry room"],
-      "image_url": "https://example.com/student_housing.jpg"
+      "image_url": "https://i.postimg.cc/g252FK5J/pexels-max-vakhtbovycn-7031607.jpg"
     },
     {
       "estate_title": "Senior Living Community with Wellness Center",
@@ -57,7 +57,7 @@
       "area": "1500 sq ft",
       "location": "321 Maple Lane, Retirement Village, USA",
       "facilities": ["living room", "wellness center", "walking trails"],
-      "image_url": "https://example.com/senior_living_community.jpg"
+      "image_url": "https://i.postimg.cc/15QWMh3R/pexels-tima-miroshnichenko-5698136.jpg"
     },
     {
       "estate_title": "Seaside Vacation Rental with Private Beach Access",
@@ -69,8 +69,8 @@
       "area": "2000 sq ft",
       "location": "555 Beachfront Avenue, Coastal Paradise, USA",
       "facilities": ["bedrooms", "private beach access", "deck"],
-      "image_url": "https://example.com/vacation_rental.jpg"
-    }
+      "image_url": "https://i.postimg.cc/D0FKTHXZ/pexels-ben-mack-6775268-1.jpg"
+    },
     {
         "estate_title": "Charming Cottage in the Countryside",
         "id": 7,
@@ -81,7 +81,7 @@
         "area": "1500 sq ft",
         "location": "789 Meadow Lane, Rural Retreat, USA",
         "facilities": ["living room", "garden", "fireplace"],
-        "image_url": "https://example.com/countryside_cottage.jpg"
+        "image_url": "https://i.postimg.cc/k5r1z88M/pexels-pixabay-314937.jpg"
       },
       {
         "estate_title": "Modern Townhouse in Gated Community",
@@ -93,7 +93,7 @@
         "area": "2000 sq ft",
         "location": "456 Security Drive, Safe Haven, USA",
         "facilities": ["living room", "kitchen island", "community pool"],
-        "image_url": "https://example.com/gated_townhouse.jpg"
+        "image_url": "https://i.postimg.cc/056tkcf5/istockphoto-157383278-612x612.jpg"
       },
       {
         "estate_title": "Spacious Apartment in Trendy Urban Neighborhood",
@@ -105,7 +105,7 @@
         "area": "1600 sq ft",
         "location": "123 Loft Avenue, Hipster District, USA",
         "facilities": ["living room", "fitness center", "balcony"],
-        "image_url": "https://example.com/trendy_apartment.jpg"
+        "image_url": "https://i.postimg.cc/NGT1CVDX/pexels-pixabay-534124.jpg"
       }
 
   ]
