@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import SocialLogin from "./SocialLogin";
+// import SocialLogin from "./SocialLogin";
 import UserAuth from "../../UserAuth";
 
 const Login = () => {
@@ -65,9 +65,7 @@ const Login = () => {
                 Register
               </Link>
             </p>
-            <div className="p-2">
-              <SocialLogin></SocialLogin>
-            </div>
+            <div className="p-2">{/* <SocialLogin></SocialLogin> */}</div>
           </div>
         </div>
       </div>
