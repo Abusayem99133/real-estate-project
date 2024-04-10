@@ -17,12 +17,11 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("/residential.json"),
       },
       {
         path: "/details/:id",
         element: <PropertyDetails></PropertyDetails>,
-        loader: () => fetch("./residential.json"),
+        loader: () => fetch("/residential.json"),
       },
       {
         path: "/login",

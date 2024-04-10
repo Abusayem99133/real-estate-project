@@ -1,4 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
+import hujur from "../assets/siam.jpg";
 import logo from "../assets/house.png";
 const Navbar = () => {
   const navLinks = (
@@ -15,9 +16,7 @@ const Navbar = () => {
       <li>
         <NavLink to="/profile">Update Profile</NavLink>
       </li>
-      <li>
-        <NavLink to="register">Register</NavLink>
-      </li>
+
       <li>
         <NavLink to="login">Login</NavLink>
       </li>
@@ -93,18 +92,7 @@ const Navbar = () => {
               Update Profile
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              to="register"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-lime-600 border-2 border-lime-500 hover:bg-lime-400 font-bold"
-                  : "font-bold"
-              }
-            >
-              Register
-            </NavLink>
-          </li>
+
           <li>
             <NavLink
               to="login"
@@ -120,11 +108,8 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="mt-20 -ml-5  md:ml-0 md:mt-0  navbar-end">
-        <div className="w-10 rounded-full">
-          <img
-            alt="Tailwind CSS Navbar component"
-            src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-          />
+        <div className="w-10">
+          <img className="rounded-full" alt="user photo" src={hujur} />
         </div>
         <Link to="/login">
           <button className="btn">Login</button>
