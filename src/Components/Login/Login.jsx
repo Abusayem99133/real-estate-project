@@ -1,12 +1,13 @@
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { FaGithub, FaTwitter } from "react-icons/fa";
+
 import { FcGoogle } from "react-icons/fc";
 
 // import SocialLogin from "./SocialLogin";
 import UserAuth from "../../UserAuth";
+import { FaGithub } from "react-icons/fa";
 
 const Login = () => {
-  const { signInUser, googleLogin, gitHubLogin, XLogin } = UserAuth();
+  const { signInUser, googleLogin, gitHubLogin } = UserAuth();
   const navigate = useNavigate();
   const location = useLocation();
   const from = location?.state || "/";
@@ -97,12 +98,6 @@ const Login = () => {
                     className="text-4xl"
                   >
                     <FaGithub />
-                  </button>
-                  <button
-                    onClick={() => handleSocialSignin(XLogin)}
-                    className="text-4xl"
-                  >
-                    <FaTwitter />
                   </button>
                 </div>
               </div>

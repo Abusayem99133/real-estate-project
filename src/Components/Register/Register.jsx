@@ -3,10 +3,11 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import UserAuth from "../../UserAuth";
 
 const Register = () => {
-  const { createUser } = UserAuth();
+  const { createUser, updateUserProfile } = UserAuth();
   const navigate = useNavigate();
   const location = useLocation();
   const from = location?.state || "/";
+
   const handleRegister = (e) => {
     e.preventDefault();
     console.log(e.currentTarget);
@@ -16,11 +17,12 @@ const Register = () => {
     const email = form.get("email");
     const password = form.get("password");
     console.log(name, photo, email, password);
+
     createUser(email, password)
-      .then((result) => {
-        if (result.user) {
-          navigate(from);
-        }
+      .then(() => {
+        updateUserProfile(name, photo).then(() => {});
+
+        navigate(from);
       })
       .catch((error) => {
         console.log(error.message);

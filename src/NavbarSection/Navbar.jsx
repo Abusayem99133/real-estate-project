@@ -4,6 +4,7 @@ import logo from "../assets/house.png";
 import UserAuth from "../UserAuth";
 const Navbar = () => {
   const { user, logOut } = UserAuth();
+  // console.log(user.photo);
   // const handleSignOut = () => {
   //   logOut()
   //     .then((result) => {
@@ -112,7 +113,11 @@ const Navbar = () => {
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10">
-                <img className="rounded-full" alt="user photo" src={hujur} />
+                <img
+                  className="rounded-full"
+                  alt="user photo"
+                  src={user?.photo || hujur}
+                />
               </div>
             </label>
             <ul
@@ -120,7 +125,9 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <button className="btn btn-sm btn-ghost">Sayem</button>
+                <button className="btn btn-sm btn-ghost">
+                  {user?.displayName || "User Name not found"}
+                </button>
               </li>
               <li>
                 <button
