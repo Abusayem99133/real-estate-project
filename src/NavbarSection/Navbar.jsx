@@ -4,16 +4,7 @@ import logo from "../assets/house.png";
 import UserAuth from "../UserAuth";
 const Navbar = () => {
   const { user, logOut } = UserAuth();
-  // console.log(user.photo);
-  // const handleSignOut = () => {
-  //   logOut()
-  //     .then((result) => {
-  //       console.log(result.user);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error.message);
-  //     });
-  // };
+
   const navLinks = (
     <>
       <li>
@@ -144,15 +135,6 @@ const Navbar = () => {
             <button className="btn btn-sm btn-ghost">Login</button>
           </Link>
         )}
-        {/* {user ? (
-          <button onClick={handleSignOut} className="btn">
-            SignOut
-          </button>
-        ) : (
-          <Link to="/login">
-            <button className="btn bg-orange-300">Login</button>
-          </Link>
-        )} */}
       </div>
     </div>
   );

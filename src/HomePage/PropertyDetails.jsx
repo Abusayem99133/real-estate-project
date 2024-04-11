@@ -26,7 +26,10 @@ const PropertyDetails = () => {
         <div className="flex flex-row-reverse justify-between items-center bg-slate-200 p-6 rounded-md">
           <img src={image_url} className="w-[50%] rounded-lg shadow-2xl" />
           <div>
-            <h1 className="text-5xl font-display font-bold">{segment_name}</h1>
+            <span className="bg-lime-400 ml-0  px-2 rounded-md">New</span>
+            <h1 className="text-5xl mt-3  font-display font-bold">
+              {segment_name}
+            </h1>
             <p className="font-display mt-2 text-2xl">
               <span className="font-display  font-bold">Location:</span>{" "}
               {location}
@@ -41,11 +44,10 @@ const PropertyDetails = () => {
               <h2 className="font-display font-bold text-3xl">
                 {estate_title}
               </h2>
-              <span className="bg-orange-400 p-2 rounded-2xl">New</span>
             </div>
 
             <p className="font-display text-2xl mt-2">
-              <span className="font-bold">Facilities:</span> {facilities}
+              <span className="font-bold">Facilities:</span> {facilities[0]}
             </p>
             <p className="mt-2  font-display">
               <span className="font-bold">Description:</span> {description}
