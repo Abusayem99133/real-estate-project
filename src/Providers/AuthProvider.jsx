@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import {
   GithubAuthProvider,
   GoogleAuthProvider,
+  TwitterAuthProvider,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
@@ -13,6 +14,7 @@ import auth from "../Components/firebase/firebase.config";
 export const AuthContext = createContext(null);
 const googleProvider = new GoogleAuthProvider();
 const gitHubProvider = new GithubAuthProvider();
+const XProvider = new TwitterAuthProvider();
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   // create user
@@ -25,6 +27,7 @@ const AuthProvider = ({ children }) => {
   };
   // sign out in user
   const logOut = () => {
+    setUser(null);
     return signOut(auth);
   };
   // google login in user
@@ -34,6 +37,10 @@ const AuthProvider = ({ children }) => {
   // github login in user
   const gitHubLogin = () => {
     return signInWithPopup(auth, gitHubProvider);
+  };
+  // X login user
+  const XLogin = () => {
+    return signInWithPopup(auth, XProvider);
   };
 
   // observer
@@ -50,6 +57,7 @@ const AuthProvider = ({ children }) => {
     googleLogin,
     gitHubLogin,
     logOut,
+    XLogin,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

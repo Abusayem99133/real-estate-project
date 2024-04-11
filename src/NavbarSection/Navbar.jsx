@@ -4,15 +4,15 @@ import logo from "../assets/house.png";
 import UserAuth from "../UserAuth";
 const Navbar = () => {
   const { user, logOut } = UserAuth();
-  const handleSignOut = () => {
-    logOut()
-      .then((result) => {
-        console.log(result.user);
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
-  };
+  // const handleSignOut = () => {
+  //   logOut()
+  //     .then((result) => {
+  //       console.log(result.user);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error.message);
+  //     });
+  // };
   const navLinks = (
     <>
       <li>
@@ -82,18 +82,6 @@ const Navbar = () => {
 
           <li>
             <NavLink
-              to="/about"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-orange-600 border-2 border-orange-500 hover:bg-purple-200 font-bold"
-                  : "font-bold"
-              }
-            >
-              About Pages
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
               to="/profile"
               className={({ isActive }) =>
                 isActive
@@ -120,10 +108,36 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="mt-20 -ml-5  md:ml-0 md:mt-0  navbar-end">
-        <div className="w-10">
-          <img className="rounded-full" alt="user photo" src={hujur} />
-        </div>
-        {user ? (
+        {user?.email ? (
+          <div className="dropdown dropdown-end">
+            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+              <div className="w-10">
+                <img className="rounded-full" alt="user photo" src={hujur} />
+              </div>
+            </label>
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <li>
+                <button className="btn btn-sm btn-ghost">Sayem</button>
+              </li>
+              <li>
+                <button
+                  onClick={() => logOut()}
+                  className="btn btn-sm btn-ghost"
+                >
+                  Logout
+                </button>
+              </li>
+            </ul>
+          </div>
+        ) : (
+          <Link to="/login">
+            <button className="btn btn-sm btn-ghost">Login</button>
+          </Link>
+        )}
+        {/* {user ? (
           <button onClick={handleSignOut} className="btn">
             SignOut
           </button>
@@ -131,7 +145,7 @@ const Navbar = () => {
           <Link to="/login">
             <button className="btn bg-orange-300">Login</button>
           </Link>
-        )}
+        )} */}
       </div>
     </div>
   );

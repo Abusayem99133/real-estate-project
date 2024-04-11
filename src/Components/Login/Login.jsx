@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
+import { FaGithub, FaTwitter } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 
-import SocialLogin from "./SocialLogin";
+// import SocialLogin from "./SocialLogin";
 import UserAuth from "../../UserAuth";
 
 const Login = () => {
-  const { signInUser } = UserAuth();
+  const { signInUser, googleLogin, gitHubLogin, XLogin } = UserAuth();
   const handleLogin = (e) => {
     e.preventDefault();
     console.log(e.currentTarget);
@@ -67,7 +69,21 @@ const Login = () => {
               </Link>
             </p>
             <div className="p-2">
-              <SocialLogin></SocialLogin>
+              <div>
+                <h2 className="divider text-center">Or sign in with</h2>
+                <div className="text-center space-x-2">
+                  <button onClick={() => googleLogin()} className="text-4xl ">
+                    <FcGoogle />
+                  </button>
+
+                  <button onClick={() => gitHubLogin()} className="text-4xl">
+                    <FaGithub />
+                  </button>
+                  <button onClick={() => XLogin()} className="text-4xl">
+                    <FaTwitter />
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
