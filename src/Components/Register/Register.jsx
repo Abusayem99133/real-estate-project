@@ -1,9 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 import UserAuth from "../../UserAuth";
 
 const Register = () => {
   const { createUser } = UserAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location?.state || "/";
   const handleRegister = (e) => {
     e.preventDefault();
     console.log(e.currentTarget);
@@ -15,7 +18,9 @@ const Register = () => {
     console.log(name, photo, email, password);
     createUser(email, password)
       .then((result) => {
-        console.log(result.user);
+        if (result.user) {
+          navigate(from);
+        }
       })
       .catch((error) => {
         console.log(error.message);

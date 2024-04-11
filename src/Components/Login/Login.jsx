@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { FaGithub, FaTwitter } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 
@@ -7,6 +7,9 @@ import UserAuth from "../../UserAuth";
 
 const Login = () => {
   const { signInUser, googleLogin, gitHubLogin, XLogin } = UserAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location?.state || "/";
   const handleLogin = (e) => {
     e.preventDefault();
     console.log(e.currentTarget);
@@ -18,11 +21,21 @@ const Login = () => {
     console.log(name, photo, email, password);
     signInUser(email, password)
       .then((result) => {
-        console.log(result.user);
+        if (result.user) {
+          navigate(from);
+        }
       })
       .catch((error) => {
         console.log(error.message);
       });
+  };
+  const handleSocialSignin = (socialProvider) => {
+    socialProvider().then((result) => {
+      if (result.user) {
+        navigate(from);
+        // console.log(result.user);
+      }
+    });
   };
   return (
     <div>
@@ -72,14 +85,23 @@ const Login = () => {
               <div>
                 <h2 className="divider text-center">Or sign in with</h2>
                 <div className="text-center space-x-2">
-                  <button onClick={() => googleLogin()} className="text-4xl ">
+                  <button
+                    onClick={() => handleSocialSignin(googleLogin)}
+                    className="text-4xl "
+                  >
                     <FcGoogle />
                   </button>
 
-                  <button onClick={() => gitHubLogin()} className="text-4xl">
+                  <button
+                    onClick={() => handleSocialSignin(gitHubLogin)}
+                    className="text-4xl"
+                  >
                     <FaGithub />
                   </button>
-                  <button onClick={() => XLogin()} className="text-4xl">
+                  <button
+                    onClick={() => handleSocialSignin(XLogin)}
+                    className="text-4xl"
+                  >
                     <FaTwitter />
                   </button>
                 </div>
